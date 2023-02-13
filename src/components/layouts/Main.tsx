@@ -5,9 +5,12 @@ import { Breakpoints, Sizes } from "../../styles/Breakpoints";
 const Main = styled.main`
   display: grid;
   grid-template-columns: 0.1fr 1fr 0.1fr;
+
   grid-template-areas:
     "nav nav nav"
-    ". content .";
+    ". content ."
+    ". content2 .";
+
   justify-items: center;
   @media ${Breakpoints.sm} {
     display: block;

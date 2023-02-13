@@ -1,16 +1,28 @@
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/Globals";
 import { Theme } from "./styles/Theme";
 
 import Homepage from "./pages/HomePage";
 
-interface AppProps {}
+export interface User {
+  id: string;
+  user: string;
+  age: number;
+}
 
-export default function App(props: AppProps) {
+const App: React.FC = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  const onSave = (user: User) => {
+    setUsers([...users, user]);
+  };
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
-      <Homepage />
+      <Homepage userList={users} onSave={onSave} />
     </ThemeProvider>
   );
-}
+};
+
+export default App;

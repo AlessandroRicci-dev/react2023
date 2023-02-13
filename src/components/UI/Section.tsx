@@ -4,9 +4,10 @@ import { Theme } from "../../styles/Theme";
 
 interface Props {
   marginTop?: string;
+  content: string;
 }
 const Section = styled.section<Props>`
-  grid-area: content;
+  grid-area: ${(props) => props.content};
   width: 100%;
   padding: ${Theme.paddings.default};
 
