@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Theme } from "../../styles/Theme";
+import { useRef } from "react";
 
-interface Props {
-  type: string;
-  label?: string;
-}
+// interface Props {
+//   type: string;
+//   label?: string;
+// }
 
 const InputField = styled.input`
   width: 100%;
@@ -28,13 +29,15 @@ const Label = styled.label`
 `;
 
 const Input = (props) => {
+  const inputRef = useRef();
   return (
     <>
       <Label>
         {props.label}
         <InputField
+          ref={props.reference}
           type={props.type}
-          onChange={(e) => props.onChangeHandler(e)}
+          // onChange={(e) => props.onChangeHandler(e)}
         />
       </Label>
     </>

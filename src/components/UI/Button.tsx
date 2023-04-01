@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { Theme } from "../../styles/Theme";
 import { Breakpoints } from "../../styles/Breakpoints";
-interface Props {
-  center?: boolean;
-}
+
 const Button = styled.button`
   display: block;
   width: fit-content;
